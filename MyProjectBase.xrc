@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxFrame" name="DdoCdFrame">
+    <size>1024,768</size>
+    <style>wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxTAB_TRAVERSAL</style>
+    <title>Dungeons &amp; Dragons Online Character Designer</title>
+    <centered>1</centered>
+    <aui_managed>0</aui_managed>
+    <object class="wxMenuBar" name="main_menubar">
+      <object class="wxMenu" name="file_menu">
+        <label>_File</label>
+        <object class="wxMenuItem" name="new_character_menu">
+          <label>_New Character</label>
+          <accel>ctrl+n</accel>
+          <help>Create a New Character</help>
+        </object>
+        <object class="wxMenuItem" name="save_character_menu">
+          <label>_Save</label>
+          <accel>ctrl+s</accel>
+          <help>Save Character</help>
+        </object>
+        <object class="separator"/>
+        <object class="wxMenuItem" name="exit_menu_item">
+          <label>E_xit</label>
+          <accel>ctrl+q</accel>
+          <help>Exit DDO Character Designer</help>
+        </object>
+      </object>
+      <object class="wxMenu" name="help_menu">
+        <label>_Help</label>
+        <object class="wxMenuItem" name="about_menu_item">
+          <label>About</label>
+          <accel></accel>
+          <help>About DDO Character Designer</help>
+        </object>
+      </object>
+    </object>
+    <object class="wxStatusBar" name="main_status">
+      <style>wxSTB_SIZEGRIP</style>
+      <fields>4</fields>
+    </object>
+  </object>
+</resource>

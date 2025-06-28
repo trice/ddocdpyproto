@@ -1,44 +1,18 @@
 import wx
+from wx import xrc
 
-class DdoFrame(wx.Frame):
-    def __init__(self, *args, **kw):
-        super().__init__(*args, **kw)
+class DdoApplication(wx.App):
+    def OnInit(self):
+        self.res = xrc.XmlResource('MyProjectBase.xrc')
+        self.init_frame()
+        return True
 
-        panel = wx.Panel(self)
+    def init_frame(self):
+        self.window_frame = self.res.LoadFrame(None, 'DdoCdFrame')
+        self.window_frame.Show()
 
-        sizer = wx.BoxSizer(wx.VERTICAL)
-        panel.SetSizer(sizer)
-
-        self.makeMenuBar()
-
-    def makeMenuBar(self):
-        fileMenu = wx.Menu()
-
-        newCharacterMenuItem = fileMenu.Append(-1, "&New Character...\tCtrl-N",
-                                               "Create a new character")
-
-        fileMenu.AppendSeparator()
-
-        exitMenuItem = fileMenu.Append(wx.ID_EXIT)
-
-        theMenu = wx.MenuBar()
-        theMenu.Append(fileMenu, "&File")
-
-        self.SetMenuBar(theMenu)
-
-        self.Bind(wx.EVT_MENU, self.onNewCharacter, newCharacterMenuItem)
-        self.Bind(wx.EVT_MENU, self.onExit, exitMenuItem)
-
-
-    def onNewCharacter(self, event):
-        wx.MessageBox("Coming soon...")
-
-    def onExit(self, event):
-        self.Close(True)
 
 if __name__ == '__main__':
-    app = wx.App()
-    frm = DdoFrame(None, title="DDO CD (Prototype)")
-    frm.Show()
+    app = DdoApplication(False)
     app.MainLoop()
 
