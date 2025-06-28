@@ -15,6 +15,6 @@ installed or set up your venv using the following:
 ```
 python3 -m venv .venv
 pip install wxPython
-
+source .venv/bin/activate
 python3 ddocdpy.py
 ```
