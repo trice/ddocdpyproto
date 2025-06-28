@@ -40,4 +40,23 @@
       <fields>4</fields>
     </object>
   </object>
+  <object class="wxDialog" name="AboutDialog">
+    <size>350,200</size>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+    <title>About</title>
+    <centered>1</centered>
+    <object class="wxStaticText" name="about_ddo_cd">
+      <pos>-1,-1</pos>
+      <style>wxALIGN_CENTER_HORIZONTAL</style>
+      <font>
+        <size>13</size>
+        <style>normal</style>
+        <weight>normal</weight>
+        <family>roman</family>
+        <underlined>0</underlined>
+      </font>
+      <label>Dungeons __ Dragons Online\nCharacter Designer by Terry Rice</label>
+      <wrap>-1</wrap>
+    </object>
+  </object>
 </resource>
