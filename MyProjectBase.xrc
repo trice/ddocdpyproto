@@ -45,7 +45,7 @@
         <orient>wxVERTICAL</orient>
         <object class="spacer">
           <flag>wxEXPAND</flag>
-          <border>5</border>
+          <border>0</border>
           <option>0</option>
           <size>0,10</size>
         </object>
@@ -91,6 +91,45 @@
                   <item></item>
                 </content>
               </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>20</border>
+          <option>0</option>
+          <size>0,25</size>
+        </object>
+        <object class="sizeritem">
+          <flag>wxALIGN_CENTER</flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="m_descsizer">
+            <minsize>900,200</minsize>
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxEXPAND | wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticLine" name="m_staticline2">
+                <style>wxLI_VERTICAL</style>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>1</option>
+              <object class="wxStaticText" name="m_class_description">
+                <size>900,-1</size>
+                <label></label>
+                <wrap>880</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxEXPAND | wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticLine" name="m_staticline1"/>
             </object>
           </object>
         </object>
