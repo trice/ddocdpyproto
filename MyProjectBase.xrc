@@ -3,7 +3,7 @@
   <object class="wxFrame" name="DdoCdFrame">
     <size>1024,768</size>
     <style>wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxTAB_TRAVERSAL</style>
-    <title>Dungeons &amp; Dragons Online Character Designer</title>
+    <title>Dungeons _ Dragons Online Character Designer</title>
     <centered>1</centered>
     <aui_managed>0</aui_managed>
     <object class="wxMenuBar" name="main_menubar">
@@ -13,17 +13,20 @@
           <label>_New Character</label>
           <accel>ctrl+n</accel>
           <help>Create a New Character</help>
+          <enabled>0</enabled>
         </object>
         <object class="wxMenuItem" name="save_character_menu">
           <label>_Save</label>
           <accel>ctrl+s</accel>
           <help>Save Character</help>
+          <enabled>0</enabled>
         </object>
         <object class="separator"/>
         <object class="wxMenuItem" name="exit_menu_item">
           <label>E_xit</label>
           <accel>ctrl+q</accel>
           <help>Exit DDO Character Designer</help>
+          <enabled>0</enabled>
         </object>
       </object>
       <object class="wxMenu" name="help_menu">
@@ -32,6 +35,7 @@
           <label>About</label>
           <accel></accel>
           <help>About DDO Character Designer</help>
+          <enabled>0</enabled>
         </object>
       </object>
     </object>
@@ -39,24 +43,304 @@
       <style>wxSTB_SIZEGRIP</style>
       <fields>4</fields>
     </object>
+    <object class="wxPanel" name="m_panel1">
+      <style>wxTAB_TRAVERSAL</style>
+      <object class="wxBoxSizer" name="bSizer10">
+        <orient>wxVERTICAL</orient>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer6">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_class_label">
+                <size>100,-1</size>
+                <label>Class</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_class">
+                <size>150,-1</size>
+                <selection>0</selection>
+                <content>
+                  <item>Alchemist</item>
+                  <item>Artificer</item>
+                  <item>Barbarian</item>
+                  <item>Bard</item>
+                  <item>Cleric</item>
+                  <item>Druid</item>
+                  <item>Favored Soul</item>
+                  <item>Fighter</item>
+                  <item>Monk</item>
+                  <item>Paladin</item>
+                  <item>Ranger</item>
+                  <item>Rogue</item>
+                  <item>Sorcerer</item>
+                  <item>Warlock</item>
+                  <item>Wizard</item>
+                  <item></item>
+                </content>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,25</size>
+        </object>
+        <object class="sizeritem">
+          <flag>wxALL</flag>
+          <border>5</border>
+          <option>0</option>
+          <object class="wxStaticText" name="m_ability_label">
+            <size>225,25</size>
+            <font>
+              <size>13</size>
+              <style>normal</style>
+              <weight>bold</weight>
+              <family>default</family>
+              <underlined>0</underlined>
+            </font>
+            <label>Ability Scores</label>
+            <wrap>-1</wrap>
+          </object>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer3">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_strength_label">
+                <size>100,-1</size>
+                <label>Strength</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_strength">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer4">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_dexterity_label">
+                <size>100,-1</size>
+                <label>Dexterity</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_dexterity">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer5">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_constitution_label">
+                <size>100,-1</size>
+                <label>Constitution</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_constitution">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer7">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_intelligence_label">
+                <size>100,-1</size>
+                <label>Intelligence</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_intelligence">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer8">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_wisdom">
+                <size>100,-1</size>
+                <label>Wisdom</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_choice6">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object class="spacer">
+          <flag>wxEXPAND</flag>
+          <border>5</border>
+          <option>0</option>
+          <size>0,10</size>
+        </object>
+        <object class="sizeritem">
+          <flag></flag>
+          <border>0</border>
+          <option>0</option>
+          <object class="wxBoxSizer" name="bSizer9">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_charisma_label">
+                <size>100,-1</size>
+                <label>Charisma</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxChoice" name="m_choice7">
+                <selection>0</selection>
+                <content/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
   </object>
   <object class="wxDialog" name="AboutDialog">
     <size>350,200</size>
     <style>wxDEFAULT_DIALOG_STYLE</style>
     <title>About</title>
     <centered>1</centered>
-    <object class="wxStaticText" name="about_ddo_cd">
-      <pos>-1,-1</pos>
-      <style>wxALIGN_CENTER_HORIZONTAL</style>
-      <font>
-        <size>13</size>
-        <style>normal</style>
-        <weight>normal</weight>
-        <family>roman</family>
-        <underlined>0</underlined>
-      </font>
-      <label>Dungeons __ Dragons Online\nCharacter Designer by Terry Rice</label>
-      <wrap>-1</wrap>
+    <object class="wxBoxSizer" name="bSizer1">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <flag>wxALL</flag>
+        <border>5</border>
+        <option>0</option>
+        <object class="wxStaticText" name="about_ddo_cd">
+          <pos>-1,-1</pos>
+          <style>wxALIGN_CENTER_HORIZONTAL</style>
+          <font>
+            <size>13</size>
+            <style>normal</style>
+            <weight>normal</weight>
+            <family>roman</family>
+            <underlined>0</underlined>
+          </font>
+          <label>Dungeons __ Dragons Online\nCharacter Designer by Terry Rice</label>
+          <wrap>-1</wrap>
+        </object>
+      </object>
     </object>
   </object>
 </resource>
