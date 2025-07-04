@@ -13,20 +13,17 @@
           <label>_New Character</label>
           <accel>ctrl+n</accel>
           <help>Create a New Character</help>
-          <enabled>0</enabled>
         </object>
         <object class="wxMenuItem" name="save_character_menu">
           <label>_Save</label>
           <accel>ctrl+s</accel>
           <help>Save Character</help>
-          <enabled>0</enabled>
         </object>
         <object class="separator"/>
         <object class="wxMenuItem" name="exit_menu_item">
           <label>E_xit</label>
           <accel>ctrl+q</accel>
           <help>Exit DDO Character Designer</help>
-          <enabled>0</enabled>
         </object>
       </object>
       <object class="wxMenu" name="help_menu">
@@ -35,7 +32,6 @@
           <label>About</label>
           <accel></accel>
           <help>About DDO Character Designer</help>
-          <enabled>0</enabled>
         </object>
       </object>
     </object>
@@ -306,7 +302,7 @@
               <flag>wxALL</flag>
               <border>0</border>
               <option>0</option>
-              <object class="wxChoice" name="m_choice7">
+              <object class="wxChoice" name="m_charisma">
                 <selection>0</selection>
                 <content/>
               </object>
