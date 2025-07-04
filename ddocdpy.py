@@ -14,7 +14,7 @@ class DdoApplication(wx.App):
         self.Bind(wx.EVT_MENU, self.on_save_character, id = xrc.XRCID('save_character_menu'))
         self.Bind(wx.EVT_MENU, self.on_about, id = xrc.XRCID('about_menu_item'))
         self.Bind(wx.EVT_MENU, self.on_exit, id=xrc.XRCID('exit_menu_item'))
-                  
+
 
     def on_about(self, event):
         # Load the dialog from XRC
