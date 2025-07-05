@@ -38,7 +38,7 @@ Favored Souls are divine casters that follow a path similar to the Cleric. They 
 
 The primary attribute of the Favored Soul is the highest of either their Wisdom or Charisma. This is used for determining both maximum spell points and spell casting effectiveness. Wisdom or Charisma can also be used for hit and damage (if higher than Strength) when using their God's favored weapon.
 
-            The Favored Soul class must either be purchased in the DDO store for 995 DP or unlocked on a per-server basis by earning 2,500 Total Favor on a single character.
+The Favored Soul class must either be purchased in the DDO store for 995 DP or unlocked on a per-server basis by earning 2,500 Total Favor on a single character.
             """,
             "Fighter": """
 Fighters are warriors with many extra feats (1 +1 every 2 levels up to 11), allowing them to specialise their role in martial combat. There are many ways to fight: single-weapon, two-handed, dual-wielding, a sword & shield or with a bow (or other ranged weapons)... you name it, a fighter can specialise in it. For best effect, players should thoroughly examine the feats they plan to select before creating this versatile front-line class. Fighters gain access to many unique feats that increase their offensive power, their defences and their ability to use tactical manoeuvres (such as Improved Trip, Improved Sunder or Stunning Blow).

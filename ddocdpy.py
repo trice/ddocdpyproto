@@ -32,6 +32,8 @@ class DdoApplication(wx.App):
         self.Bind(wx.EVT_CHOICE, self.on_class_selected,
                   id=xrc.XRCID('m_class'))
 
+        self.on_class_selected(None)
+
     def on_about(self, event):
         # Load the dialog from XRC
         about_dlg = self.res.LoadDialog(self.GetTopWindow(), "AboutDialog")
@@ -51,7 +53,7 @@ class DdoApplication(wx.App):
         index = self.class_name_ctrl.GetSelection()
         class_name = self.class_name_ctrl.GetString(index)
         description = class_description(class_name)
-        self.class_description.SetLabelText(description)
+        self.class_description.SetLabel(description)
         self.class_description.GetContainingSizer().Layout()
 
 
