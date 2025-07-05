@@ -127,20 +127,70 @@
           <size>0,25</size>
         </object>
         <object class="sizeritem">
-          <flag>wxALL</flag>
+          <flag>wxEXPAND</flag>
           <border>5</border>
           <option>0</option>
-          <object class="wxStaticText" name="m_ability_label">
-            <size>225,25</size>
-            <font>
-              <size>13</size>
-              <style>normal</style>
-              <weight>bold</weight>
-              <family>default</family>
-              <underlined>0</underlined>
-            </font>
-            <label>Ability Scores</label>
-            <wrap>-1</wrap>
+          <object class="wxBoxSizer" name="bSizer12">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_ability_label">
+                <size>150,25</size>
+                <font>
+                  <size>13</size>
+                  <style>normal</style>
+                  <weight>bold</weight>
+                  <family>default</family>
+                  <underlined>0</underlined>
+                </font>
+                <label>Ability Scores</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_build_points">
+                <size>50,-1</size>
+                <font>
+                  <style>italic</style>
+                  <weight>normal</weight>
+                  <family>default</family>
+                  <underlined>0</underlined>
+                </font>
+                <label>28 pts</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxEXPAND | wxALL</flag>
+              <border>0</border>
+              <option>0</option>
+              <object class="wxStaticLine" name="m_staticline3">
+                <style>wxLI_HORIZONTAL</style>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_hp_label">
+                <label>HP:</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_hp">
+                <label>0</label>
+                <wrap>-1</wrap>
+              </object>
+            </object>
           </object>
         </object>
         <object class="sizeritem">
