@@ -96,9 +96,9 @@
         </object>
         <object class="spacer">
           <flag>wxEXPAND</flag>
-          <border>20</border>
+          <border>0</border>
           <option>0</option>
-          <size>0,25</size>
+          <size>0,5</size>
         </object>
         <object class="sizeritem">
           <flag>wxALIGN_CENTER</flag>
@@ -124,7 +124,7 @@
           <flag>wxEXPAND</flag>
           <border>5</border>
           <option>0</option>
-          <size>0,25</size>
+          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag>wxEXPAND</flag>
@@ -173,11 +173,24 @@
                 <style>wxLI_HORIZONTAL</style>
               </object>
             </object>
-            <object class="sizeritem">
-              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
               <border>5</border>
               <option>0</option>
+              <size>15,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+              <border>0</border>
+              <option>0</option>
               <object class="wxStaticText" name="m_hp_label">
+                <size>30,-1</size>
+                <font>
+                  <style>normal</style>
+                  <weight>bold</weight>
+                  <family>default</family>
+                  <underlined>0</underlined>
+                </font>
                 <label>HP:</label>
                 <wrap>-1</wrap>
               </object>
@@ -199,6 +212,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer3">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -210,21 +229,33 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_strength">
+                <pos>-1,-1</pos>
                 <selection>0</selection>
                 <content/>
               </object>
             </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText15">
+                <pos>-1,-1</pos>
+                <size>500,-1</size>
+                <label>Is muscle and physical power. It is important for Fighters, Barbarians, Paladins, and Rangers. It limits the amount of equipment your character can carry. </label>
+                <wrap>480</wrap>
+              </object>
+            </object>
           </object>
-        </object>
-        <object class="spacer">
-          <flag>wxEXPAND</flag>
-          <border>5</border>
-          <option>0</option>
-          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag></flag>
@@ -232,6 +263,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer4">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -243,7 +280,7 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_dexterity">
@@ -251,13 +288,23 @@
                 <content/>
               </object>
             </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText16">
+                <size>500,-1</size>
+                <label>Is hand-eye coordination, agility, reflexes, and balance. It is the important for Rogues, but also for characters who wear light, medium, or no armor at all, and for anyone who wants to be a skilled archer. </label>
+                <wrap>480</wrap>
+              </object>
+            </object>
           </object>
-        </object>
-        <object class="spacer">
-          <flag>wxEXPAND</flag>
-          <border>5</border>
-          <option>0</option>
-          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag></flag>
@@ -265,6 +312,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer5">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -276,7 +329,7 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_constitution">
@@ -284,13 +337,23 @@
                 <content/>
               </object>
             </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText17">
+                <size>500,-1</size>
+                <label>Represents your Character’s health and stamina. A Constitution bonus increases a hit points making it important for all classes. </label>
+                <wrap>480</wrap>
+              </object>
+            </object>
           </object>
-        </object>
-        <object class="spacer">
-          <flag>wxEXPAND</flag>
-          <border>5</border>
-          <option>0</option>
-          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag></flag>
@@ -298,6 +361,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer7">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -309,7 +378,7 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_intelligence">
@@ -317,13 +386,23 @@
                 <content/>
               </object>
             </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText18">
+                <size>500,-1</size>
+                <label>Is important for Wizards, Artificers and Alchemists. It affects spell points, how hard their spells are to resist, and how powerful their spells are. It&apos;s also important for any character who wants to have many skills.</label>
+                <wrap>480</wrap>
+              </object>
+            </object>
           </object>
-        </object>
-        <object class="spacer">
-          <flag>wxEXPAND</flag>
-          <border>5</border>
-          <option>0</option>
-          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag></flag>
@@ -331,6 +410,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer8">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>0</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -342,7 +427,7 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_choice6">
@@ -350,13 +435,23 @@
                 <content/>
               </object>
             </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText19">
+                <size>500,-1</size>
+                <label>Is a Character’s willpower, common sense, perception, and intuition. It is an important ability for Clerics. It is  important for Favored Souls, Paladins, Rangers, Druids and Monks.</label>
+                <wrap>480</wrap>
+              </object>
+            </object>
           </object>
-        </object>
-        <object class="spacer">
-          <flag>wxEXPAND</flag>
-          <border>5</border>
-          <option>0</option>
-          <size>0,10</size>
         </object>
         <object class="sizeritem">
           <flag></flag>
@@ -364,6 +459,12 @@
           <option>0</option>
           <object class="wxBoxSizer" name="bSizer9">
             <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>15,0</size>
+            </object>
             <object class="sizeritem">
               <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>5</border>
@@ -375,12 +476,28 @@
               </object>
             </object>
             <object class="sizeritem">
-              <flag>wxALL</flag>
+              <flag>wxALL|wxALIGN_CENTER_VERTICAL</flag>
               <border>0</border>
               <option>0</option>
               <object class="wxChoice" name="m_charisma">
                 <selection>0</selection>
                 <content/>
+              </object>
+            </object>
+            <object class="spacer">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>0</option>
+              <size>20,0</size>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL</flag>
+              <border>5</border>
+              <option>0</option>
+              <object class="wxStaticText" name="m_staticText20">
+                <size>500,-1</size>
+                <label>It is a character&apos;s personality, persuasiveness, personal magnetism. It is important for Bards, Paladins, Sorcerers, Warlocks, and Clerics, since it affects the ability to turn undead.</label>
+                <wrap>480</wrap>
               </object>
             </object>
           </object>
