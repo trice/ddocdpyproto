@@ -83,3 +83,4 @@ The primary attribute of the Wizard is Intelligence, determining maximum spell p
     }
 
     return descriptions[class_name]
+

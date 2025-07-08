@@ -1,12 +1,15 @@
 import wx
 from wx import xrc
 from library.ddocdlib import class_description
+from library.ddocdspend import get_ability_range, point_spender
 
 
 class DdoApplication(wx.App):
     def OnInit(self):
         self.res = xrc.XmlResource('MyProjectBase.xrc')
         self.init_frame()
+        self.__build_point_default = 28
+        self.__build_point_balance = 28
         return True
 
     def init_frame(self):
@@ -33,6 +36,14 @@ class DdoApplication(wx.App):
                   id=xrc.XRCID('m_class'))
 
         self.on_class_selected(None)
+
+        # find all the ability wx.Choice and then fill them with options
+        self.strength = xrc.XRCCTRL(self.window_frame, "m_strength",
+                                    wx.Choice)
+        if self.strength is not None:
+            self.strength.Set(["8", "9", "10", "11",
+                               "12", "13", "14", "15",
+                               "16", "17", "18"])
 
     def on_about(self, event):
         # Load the dialog from XRC
