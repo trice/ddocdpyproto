@@ -40,10 +40,42 @@ class DdoApplication(wx.App):
         # find all the ability wx.Choice and then fill them with options
         self.strength = xrc.XRCCTRL(self.window_frame, "m_strength",
                                     wx.Choice)
+
+        self.dexterity = xrc.XRCCTRL(self.window_frame, "m_dexterity",
+                                    wx.Choice)
+
+        self.constitution = xrc.XRCCTRL(self.window_frame, "m_constitution",
+                                    wx.Choice)
+
+        self.intelligence = xrc.XRCCTRL(self.window_frame, "m_intelligence",
+                                    wx.Choice)
+
+        self.wisdom = xrc.XRCCTRL(self.window_frame, "m_wisdom",
+                                    wx.Choice)
+
+        self.charisma = xrc.XRCCTRL(self.window_frame, "m_charisma",
+                                    wx.Choice)
+
+        ability_ints = get_ability_range(28)
+        ability_strings = list(map(str, ability_ints))
+
         if self.strength is not None:
-            self.strength.Set(["8", "9", "10", "11",
-                               "12", "13", "14", "15",
-                               "16", "17", "18"])
+            self.strength.Set(ability_strings)
+
+        if self.dexterity is not None:
+            self.dexterity.Set(ability_strings)
+
+        if self.constitution is not None:
+            self.constitution.Set(ability_strings)
+
+        if self.intelligence is not None:
+            self.intelligence.Set(ability_strings)
+
+        if self.wisdom is not None:
+            self.wisdom.Set(ability_strings)
+
+        if self.charisma is not None:
+            self.charisma.Set(ability_strings)
 
     def on_about(self, event):
         # Load the dialog from XRC
