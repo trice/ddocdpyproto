@@ -62,26 +62,38 @@ class DdoApplication(wx.App):
         if self.strength is not None:
             self.strength.Set(ability_strings)
             self.strength.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_strength_changed,
+                      id=xrc.XRCID('m_strength'))
 
         if self.dexterity is not None:
             self.dexterity.Set(ability_strings)
             self.dexterity.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_dexterity_changed,
+                      id=xrc.XRCID('m_dexterity'))
 
         if self.constitution is not None:
             self.constitution.Set(ability_strings)
             self.constitution.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_constitution_changed,
+                      id=xrc.XRCID('m_constitution'))
 
         if self.intelligence is not None:
             self.intelligence.Set(ability_strings)
             self.intelligence.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_intelligence_changed,
+                      id=xrc.XRCID('m_intelligence'))
 
         if self.wisdom is not None:
             self.wisdom.Set(ability_strings)
             self.wisdom.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_wisdom_changed,
+                      id=xrc.XRCID('m_wisdom'))
 
         if self.charisma is not None:
             self.charisma.Set(ability_strings)
             self.charisma.SetSelection(0)
+            self.Bind(wx.EVT_CHOICE, self.on_charisma_changed,
+                      id=xrc.XRCID('m_charisma'))
 
     def on_about(self, event):
         # Load the dialog from XRC
@@ -104,6 +116,24 @@ class DdoApplication(wx.App):
         description = class_description(class_name)
         self.class_description.SetLabel(description)
         self.class_description.GetContainingSizer().Layout()
+
+    def on_strength_changed(self, event):
+        print("strength changed")
+
+    def on_dexterity_changed(self, event):
+        print("dexterity changed")
+
+    def on_constitution_changed(self, event):
+        print("constitution changed")
+
+    def on_intelligence_changed(self, event):
+        print("intelligence changed")
+
+    def on_wisdom_changed(self, event):
+        print("wisdom changed")
+
+    def on_charisma_changed(self, event):
+        print("charisma changed")
 
 
 if __name__ == '__main__':
