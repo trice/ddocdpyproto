@@ -2,6 +2,7 @@ import wx
 from wx import xrc
 from library.ddocdlib import class_description
 from library.ddocdspend import get_ability_range, point_spender
+from library.ddocdtype import AbilityType
 
 
 class DdoApplication(wx.App):
@@ -103,6 +104,9 @@ class DdoApplication(wx.App):
 
     def on_new_character(self, event):
         wx.MessageBox("Coming Soon...")
+        # reset points
+        # reset wxChoices to defaults
+        # reset class
 
     def on_save_character(self, event):
         wx.MessageBox("Saving Character...")
@@ -118,7 +122,10 @@ class DdoApplication(wx.App):
         self.class_description.GetContainingSizer().Layout()
 
     def on_strength_changed(self, event):
-        print("strength changed")
+        strength = int(event.String)
+        self.__build_point_balance = point_spender(8, strength,
+                                                   self.__build_point_balance)
+        self.update_build_points_view()
 
     def on_dexterity_changed(self, event):
         print("dexterity changed")
@@ -134,6 +141,14 @@ class DdoApplication(wx.App):
 
     def on_charisma_changed(self, event):
         print("charisma changed")
+
+    def update_build_points_view(self):
+        bp_label = xrc.XRCCTRL(self.window_frame, "m_build_points",
+                               wx.StaticText)
+        bp_label.SetLabel(f"{self.__build_point_balance} pts")
+
+    def update_ability_choices_except_for(self, ability):
+
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ def point_spender(start, end, points_available):
 
     points_spent = 0
     for i in range((end-start)):
-        points_spent -= build_points[i]
+        points_spent += build_points[i]
 
     return points_available - points_spent
 
