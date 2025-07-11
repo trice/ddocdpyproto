@@ -8,9 +8,10 @@ from library.ddocdtype import AbilityType
 class DdoApplication(wx.App):
     def OnInit(self):
         self.res = xrc.XmlResource('MyProjectBase.xrc')
+        self.build_point_default = 28
+        self.build_point_balance = 28
+        self.ability_default = 8
         self.init_frame()
-        self.__build_point_default = 28
-        self.__build_point_balance = 28
         return True
 
     def init_frame(self):
@@ -57,7 +58,7 @@ class DdoApplication(wx.App):
         self.charisma = xrc.XRCCTRL(self.window_frame, "m_charisma",
                                     wx.Choice)
 
-        ability_ints = get_ability_range(28)
+        ability_ints = get_ability_range(self.build_point_default)
         ability_strings = list(map(str, ability_ints))
 
         if self.strength is not None:
@@ -123,32 +124,85 @@ class DdoApplication(wx.App):
 
     def on_strength_changed(self, event):
         strength = int(event.String)
-        self.__build_point_balance = point_spender(8, strength,
-                                                   self.__build_point_balance)
+        self.build_point_balance = point_spender(8, strength,
+                                                 self.build_point_balance)
         self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Strength)
 
     def on_dexterity_changed(self, event):
-        print("dexterity changed")
+        dexterity = int(event.String)
+        self.build_point_balance = point_spender(8, dexterity,
+                                                 self.build_point_balance)
+        self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Dexterity)
 
     def on_constitution_changed(self, event):
-        print("constitution changed")
+        constitution = int(event.String)
+        self.build_point_balance = point_spender(8, constitution,
+                                                 self.build_point_balance)
+        self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Constitution)
 
     def on_intelligence_changed(self, event):
-        print("intelligence changed")
+        intelligence = int(event.String)
+        self.build_point_balance = point_spender(8, intelligence,
+                                                 self.build_point_balance)
+        self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Intelligence)
 
     def on_wisdom_changed(self, event):
-        print("wisdom changed")
+        wisdom = int(event.String)
+        self.build_point_balance = point_spender(8, wisdom,
+                                                 self.build_point_balance)
+        self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Wisdom)
 
     def on_charisma_changed(self, event):
-        print("charisma changed")
+        charisma = int(event.String)
+        self.build_point_balance = point_spender(8, charisma,
+                                                 self.build_point_balance)
+        self.update_build_points_view()
+        self.update_ability_choices_except_for(AbilityType.Charisma)
 
     def update_build_points_view(self):
         bp_label = xrc.XRCCTRL(self.window_frame, "m_build_points",
                                wx.StaticText)
-        bp_label.SetLabel(f"{self.__build_point_balance} pts")
+        bp_label.SetLabel(f"{self.build_point_balance} pts")
 
     def update_ability_choices_except_for(self, ability):
+        ability_ints = get_ability_range(self.build_point_balance)
+        ability_strs = list(map(str, ability_ints))
 
+        local_str = self.strength.GetSelection()
+        local_dex = self.dexterity.GetSelection()
+        local_con = self.constitution.GetSelection()
+        local_int = self.intelligence.GetSelection()
+        local_wis = self.wisdom.GetSelection()
+        local_cha = self.charisma.GetSelection()
+
+        if ability != AbilityType.Strength and local_str == 0:
+            self.strength.Set(ability_strs)
+            self.strength.SetSelection(0)
+
+        if ability != AbilityType.Dexterity and local_dex == 0:
+            self.dexterity.Set(ability_strs)
+            self.dexterity.SetSelection(0)
+
+        if ability != AbilityType.Constitution and local_con == 0:
+            self.constitution.Set(ability_strs)
+            self.constitution.SetSelection(0)
+
+        if ability != AbilityType.Intelligence and local_int == 0:
+            self.intelligence.Set(ability_strs)
+            self.intelligence.SetSelection(0)
+
+        if ability != AbilityType.Wisdom and local_wis == 0:
+            self.wisdom.Set(ability_strs)
+            self.wisdom.SetSelection(0)
+
+        if ability != AbilityType.Charisma and local_cha == 0:
+            self.charisma.Set(ability_strs)
+            self.charisma.SetSelection(0)
 
 
 if __name__ == '__main__':
