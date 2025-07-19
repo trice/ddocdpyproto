@@ -1,5 +1,6 @@
 import wx
 from wx import xrc
+from library.ddocdfile import save_character
 from library.ddocdlib import class_description, look_up_hp
 from library.ddocdspend import get_ability_range, point_spender
 from library.ddocdtype import AbilityType
@@ -115,7 +116,8 @@ class DdoApplication(wx.App):
         # reset class
 
     def on_save_character(self, event):
-        wx.MessageBox("Saving Character...")
+        save_character(self.selected_abilities, self.hp, self.class_name)
+        wx.MessageBox("Character Saved")
 
     def on_exit(self, event):
         self.window_frame.Close()
