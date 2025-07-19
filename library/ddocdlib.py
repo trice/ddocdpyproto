@@ -84,3 +84,31 @@ The primary attribute of the Wizard is Intelligence, determining maximum spell p
 
     return descriptions[class_name]
 
+
+def look_up_bonus(ability_score):
+    ability_bonus = { 6: -2, 7: -2, 8: -1, 9: -1,
+                     10: 0, 11: 0, 12: 1, 13: 1, 
+                     14: 2, 15: 2, 16: 3, 17: 3,
+                     18: 4 }
+
+    return ability_bonus[ability_score]
+
+def look_up_hp(con_score, class_name):
+    starting_hp = { "Alchemist": 6, "Artificer": 8,
+                   "Barbarian": 12, "Bard": 8,
+                   "Cleric": 8, "Druid": 8,
+                   "Favored Soul": 8, "Fighter": 10,
+                   "Monk": 8, "Paladin": 10,
+                   "Ranger": 10, "Rogue": 8,
+                   "Sorcerer": 6, "Warlock": 6,
+                   "Wizard": 6
+                   }
+
+    con_bonus = look_up_bonus(con_score)
+    return starting_hp[class_name] + con_bonus
+
+
+
+
+
+

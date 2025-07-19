@@ -1,6 +1,6 @@
 import wx
 from wx import xrc
-from library.ddocdlib import class_description
+from library.ddocdlib import class_description, look_up_hp
 from library.ddocdspend import get_ability_range, point_spender
 from library.ddocdtype import AbilityType
 
@@ -11,6 +11,9 @@ class DdoApplication(wx.App):
         self.build_point_default = 28
         self.build_point_balance = 28
         self.ability_default = 8
+        self.selected_abilities = [8, 8, 8, 8, 8, 8]
+        self.class_name = ""
+        self.hp = 0
         self.init_frame()
         return True
 
@@ -33,6 +36,8 @@ class DdoApplication(wx.App):
         self.description_sizer = xrc.XRCCTRL(self.window_frame,
                                              "m_descsizer",
                                              wx.BoxSizer)
+
+        self.hp_ctrl = xrc.XRCCTRL(self.window_frame, "m_hp", wx.StaticText)
 
         self.Bind(wx.EVT_CHOICE, self.on_class_selected,
                   id=xrc.XRCID('m_class'))
@@ -118,6 +123,7 @@ class DdoApplication(wx.App):
     def on_class_selected(self, event):
         index = self.class_name_ctrl.GetSelection()
         class_name = self.class_name_ctrl.GetString(index)
+        self.class_name = class_name
         description = class_description(class_name)
         self.class_description.SetLabel(description)
         self.class_description.GetContainingSizer().Layout()
@@ -128,6 +134,7 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Strength)
+        self.selected_abilities[0] = strength
 
     def on_dexterity_changed(self, event):
         dexterity = int(event.String)
@@ -135,6 +142,7 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Dexterity)
+        self.selected_abilities[1] = dexterity
 
     def on_constitution_changed(self, event):
         constitution = int(event.String)
@@ -142,6 +150,9 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Constitution)
+        self.selected_abilities[2] = constitution
+        self.hp = look_up_hp(constitution, self.class_name)
+        self.hp_ctrl.SetLabel(str(self.hp))
 
     def on_intelligence_changed(self, event):
         intelligence = int(event.String)
@@ -149,6 +160,7 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Intelligence)
+        self.selected_abilities[3] = intelligence
 
     def on_wisdom_changed(self, event):
         wisdom = int(event.String)
@@ -156,6 +168,7 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Wisdom)
+        self.selected_abilities[4] = wisdom
 
     def on_charisma_changed(self, event):
         charisma = int(event.String)
@@ -163,6 +176,7 @@ class DdoApplication(wx.App):
                                                  self.build_point_balance)
         self.update_build_points_view()
         self.update_ability_choices_except_for(AbilityType.Charisma)
+        self.selected_abilities[5] = charisma
 
     def update_build_points_view(self):
         bp_label = xrc.XRCCTRL(self.window_frame, "m_build_points",
